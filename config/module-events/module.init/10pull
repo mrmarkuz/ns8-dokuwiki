@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Pull image before use, otherwise "systemd --user start dokuwiki" will fail because start timeout is reached
+
+podman pull docker.io/bitnami/dokuwiki:latest
