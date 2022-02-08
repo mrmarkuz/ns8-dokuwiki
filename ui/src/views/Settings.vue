@@ -307,6 +307,10 @@ export default {
         }
       }
     },
+    saveSettingsAborted(taskResult, taskContext) {
+      console.error(`${taskContext.action} aborted`, taskResult);
+      this.loading.settings = false;
+    },
     async saveSettings() {
       const isValidationOk = this.validateSaveSettings();
       if (!isValidationOk) {
@@ -315,6 +319,10 @@ export default {
 
       this.loading.settings = true;
       const taskAction = "configure-module";
+
+      // register to task error
+      this.core.$root.$off(taskAction + "-aborted");
+      this.core.$root.$once(taskAction + "-aborted", this.saveSettingsAborted);
 
       // register to task validation
       this.core.$root.$off(taskAction + "-validation-failed");
