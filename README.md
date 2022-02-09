@@ -60,3 +60,14 @@ remove-module dokuwiki1 --no-preserve
 ## API reference
 
 See https://github.com/NethServer/ns8-dokuwiki/tree/apidoc
+
+    remove-module --no-preserve dokuwiki1
+
+## Testing
+
+Test the module using the `test-module.sh` script:
+
+
+    ./test-module.sh <NODE_ADDR> ghcr.io/nethserver/ns8-dokuwiki:latest
+
+The tests are made using [Robot Framework](https://robotframework.org/)
