@@ -14,9 +14,14 @@ Check if dokuwiki can be configured
     ...    return_rc=True  return_stdout=False
     Should Be Equal As Integers    ${rc}  0
 
-Check if dokuwiki works as expected
-    ${rc} =    Execute Command    sleep 10 && curl -f http://127.0.0.1/dokuwiki/
+Setup local name resolution
+    ${rc} =    Execute Command    echo 127.0.0.1 dokuwiki.test.local >> /etc/hosts
     ...    return_rc=True  return_stdout=False
+    Should Be Equal As Integers    ${rc}  0
+
+Check if dokuwiki works as expected
+    ${output}  ${rc} =    Execute Command    sleep 30 && curl -fkL http://dokuwiki.test.local/
+    ...    return_rc=True  return_stdout=True
     Should Be Equal As Integers    ${rc}  0
 
 Check if dokuwiki is removed correctly
