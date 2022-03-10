@@ -37,7 +37,7 @@
     "http_to_https": "HTTP to HTTPS",
     "enabled": "Enabled",
     "disabled": "Disabled",
-    "instance_configuration": "{instance} configuration",
+    "instance_configuration": "Configure {instance}",
     "configuring": "Configuring...",
     "email_format": "Invalid email address"
   },
