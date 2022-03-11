@@ -18,13 +18,13 @@
     <div class="bx--row">
       <div class="bx--col-lg-16">
         <cv-tile :light="true">
-          <cv-form @submit.prevent="saveSettings">
+          <cv-form @submit.prevent="configureModule">
             <cv-text-input
               :label="$t('settings.wiki_name')"
               v-model.trim="wikiName"
               class="mg-bottom"
               :invalid-message="$t(error.wiki_name)"
-              :disabled="loading.settings"
+              :disabled="loading.getConfiguration || loading.configureModule"
               ref="wikiName"
             >
             </cv-text-input>
@@ -33,7 +33,7 @@
               v-model.trim="username"
               class="mg-bottom"
               :invalid-message="$t(error.username)"
-              :disabled="loading.settings"
+              :disabled="loading.getConfiguration || loading.configureModule"
               ref="username"
             >
             </cv-text-input>
@@ -45,7 +45,7 @@
               :password-hide-label="$t('settings.hide_password')"
               class="mg-bottom"
               :invalid-message="$t(error.password)"
-              :disabled="loading.settings"
+              :disabled="loading.getConfiguration || loading.configureModule"
               ref="password"
             >
             </cv-text-input>
@@ -55,7 +55,7 @@
               v-model.trim="email"
               class="mg-bottom"
               :invalid-message="$t(error.email)"
-              :disabled="loading.settings"
+              :disabled="loading.getConfiguration || loading.configureModule"
               ref="email"
             >
             </cv-text-input>
@@ -64,7 +64,7 @@
               v-model.trim="userFullName"
               class="mg-bottom"
               :invalid-message="$t(error.user_full_name)"
-              :disabled="loading.settings"
+              :disabled="loading.getConfiguration || loading.configureModule"
               ref="userFullName"
             >
             </cv-text-input>
@@ -74,7 +74,7 @@
               v-model.trim="host"
               class="mg-bottom"
               :invalid-message="$t(error.host)"
-              :disabled="loading.settings"
+              :disabled="loading.getConfiguration || loading.configureModule"
               ref="host"
             >
             </cv-text-input>
@@ -82,7 +82,7 @@
               value="letsEncrypt"
               :label="$t('settings.lets_encrypt')"
               v-model="isLetsEncryptEnabled"
-              :disabled="loading.settings"
+              :disabled="loading.getConfiguration || loading.configureModule"
               class="mg-bottom"
             >
               <template slot="text-left">{{
@@ -96,7 +96,7 @@
               value="httpToHttps"
               :label="$t('settings.http_to_https')"
               v-model="isHttpToHttpsEnabled"
-              :disabled="loading.settings"
+              :disabled="loading.getConfiguration || loading.configureModule"
               class="mg-bottom"
             >
               <template slot="text-left">{{
@@ -119,8 +119,8 @@
             <NsButton
               kind="primary"
               :icon="Save20"
-              :loading="loading.settings"
-              :disabled="loading.settings"
+              :loading="loading.configureModule"
+              :disabled="loading.getConfiguration || loading.configureModule"
               >{{ $t("settings.save") }}</NsButton
             >
           </cv-form>
@@ -161,7 +161,8 @@ export default {
       isLetsEncryptEnabled: false,
       isHttpToHttpsEnabled: false,
       loading: {
-        settings: true,
+        getConfiguration: false,
+        configureModule: false,
       },
       error: {
         getConfiguration: "",
@@ -195,11 +196,19 @@ export default {
   },
   methods: {
     async getConfiguration() {
-      this.loading.settings = true;
+      this.loading.getConfiguration = true;
       this.error.getConfiguration = "";
       const taskAction = "get-configuration";
 
+      // register to task error
+      this.core.$root.$off(taskAction + "-aborted");
+      this.core.$root.$once(
+        taskAction + "-aborted",
+        this.getConfigurationAborted
+      );
+
       // register to task completion
+      this.core.$root.$off(taskAction + "-completed");
       this.core.$root.$once(
         taskAction + "-completed",
         this.getConfigurationCompleted
@@ -219,10 +228,29 @@ export default {
       if (err) {
         console.error(`error creating task ${taskAction}`, err);
         this.error.getConfiguration = this.getErrorMessage(err);
+        this.loading.getConfiguration = false;
         return;
       }
     },
-    validateSaveSettings() {
+    getConfigurationAborted(taskResult, taskContext) {
+      console.error(`${taskContext.action} aborted`, taskResult);
+      this.error.getConfiguration = this.core.$t("error.generic_error");
+      this.loading.getConfiguration = false;
+    },
+    getConfigurationCompleted(taskContext, taskResult) {
+      const config = taskResult.output;
+      this.wikiName = config.wiki_name;
+      this.username = config.username;
+      this.password = config.password;
+      this.userFullName = config.user_full_name;
+      this.email = config.email;
+      this.host = config.host;
+      this.isLetsEncryptEnabled = config.lets_encrypt;
+      this.isHttpToHttpsEnabled = config.http2https;
+      this.loading.getConfiguration = false;
+      this.focusElement("wikiName");
+    },
+    validateConfigureModule() {
       this.clearErrors(this);
 
       let isValidationOk = true;
@@ -292,8 +320,8 @@ export default {
 
       return isValidationOk;
     },
-    saveSettingsValidationFailed(validationErrors) {
-      this.loading.settings = false;
+    configureModuleValidationFailed(validationErrors) {
+      this.loading.configureModule = false;
       let focusAlreadySet = false;
 
       for (const validationError of validationErrors) {
@@ -307,35 +335,34 @@ export default {
         }
       }
     },
-    saveSettingsAborted(taskResult, taskContext) {
-      console.error(`${taskContext.action} aborted`, taskResult);
-      this.loading.settings = false;
-    },
-    async saveSettings() {
-      const isValidationOk = this.validateSaveSettings();
+    async configureModule() {
+      const isValidationOk = this.validateConfigureModule();
       if (!isValidationOk) {
         return;
       }
 
-      this.loading.settings = true;
+      this.loading.configureModule = true;
       const taskAction = "configure-module";
 
       // register to task error
       this.core.$root.$off(taskAction + "-aborted");
-      this.core.$root.$once(taskAction + "-aborted", this.saveSettingsAborted);
+      this.core.$root.$once(
+        taskAction + "-aborted",
+        this.configureModuleAborted
+      );
 
       // register to task validation
       this.core.$root.$off(taskAction + "-validation-failed");
       this.core.$root.$once(
         taskAction + "-validation-failed",
-        this.saveSettingsValidationFailed
+        this.configureModuleValidationFailed
       );
 
       // register to task completion
       this.core.$root.$off(taskAction + "-completed");
       this.core.$root.$once(
         taskAction + "-completed",
-        this.saveSettingsCompleted
+        this.configureModuleCompleted
       );
 
       const res = await to(
@@ -364,25 +391,17 @@ export default {
       if (err) {
         console.error(`error creating task ${taskAction}`, err);
         this.error.configureModule = this.getErrorMessage(err);
-        this.loading.settings = false;
+        this.loading.configureModule = false;
         return;
       }
     },
-    getConfigurationCompleted(taskContext, taskResult) {
-      const config = taskResult.output;
-      this.wikiName = config.wiki_name;
-      this.username = config.username;
-      this.password = config.password;
-      this.userFullName = config.user_full_name;
-      this.email = config.email;
-      this.host = config.host;
-      this.isLetsEncryptEnabled = config.lets_encrypt;
-      this.isHttpToHttpsEnabled = config.http2https;
-      this.loading.settings = false;
-      this.focusElement("wikiName");
+    configureModuleAborted(taskResult, taskContext) {
+      console.error(`${taskContext.action} aborted`, taskResult);
+      this.error.configureModule = this.core.$t("error.generic_error");
+      this.loading.configureModule = false;
     },
-    saveSettingsCompleted() {
-      this.loading.settings = false;
+    configureModuleCompleted() {
+      this.loading.configureModule = false;
 
       // reload configuration
       this.getConfiguration();
