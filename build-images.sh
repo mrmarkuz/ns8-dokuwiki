@@ -40,7 +40,11 @@ if ! buildah containers --format "{{.ContainerName}}" | grep -q nodebuilder-doku
 fi
 
 echo "Build static UI files with node..."
-buildah run nodebuilder-dokuwiki sh -c "cd /usr/src/ui && yarn install && yarn build"
+buildah run \
+    --workingdir=/usr/src/ui \
+    --env="NODE_OPTIONS=--openssl-legacy-provider" \
+    nodebuilder-dokuwiki \
+    sh -c "yarn install && yarn build"
 
 # Add imageroot directory to the container image
 buildah add "${container}" imageroot /imageroot
