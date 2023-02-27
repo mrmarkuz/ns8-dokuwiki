@@ -1,0 +1,51 @@
+{
+    "settings": {
+        "save": "Salva",
+        "title": "Impostazioni"
+    },
+    "status": {
+        "no_images": "Nessuna immagine",
+        "node": "Nodo",
+        "name": "Nome",
+        "title": "Stato",
+        "size": "Dimensione",
+        "services": "Servizio | Servizi",
+        "created": "Creato",
+        "no_services": "Nessun servizio",
+        "no_volumes": "Nessun volume",
+        "app_images": "Immagine app|Immagini app",
+        "app_instance": "Istanza app",
+        "app_volumes": "Volume app|Volumi app",
+        "installation_node": "Nodo",
+        "mount": "Percorso di mount"
+    },
+    "common": {
+        "required": "Obbligatorio",
+        "work_in_progress": "In lavorazione"
+    },
+    "action": {
+        "configure-module": "Configura modulo",
+        "get-configuration": "Visualizza configurazione",
+        "get-module-info": "Visualizza info modulo",
+        "get-status": "Visualizza stato",
+        "get-name": "Visualizza nome"
+    },
+    "error": {
+        "error": "Errore",
+        "404": "Risorsa non trovata",
+        "validation_error": "Errore di validazione",
+        "network_error": "Errore di rete",
+        "cannot_retrieve_installed_modules": "Impossibile elencare moduli installati",
+        "cannot_retrieve_module_info": "Impossibile recuperare info modulo",
+        "generic_error": "Qualcosa è andato storto",
+        "401": "Autenticazione non valida",
+        "network_timeout": "Timeout di rete",
+        "403": "Operazione non autorizzata"
+    },
+    "about": {
+        "title": "Informazioni"
+    },
+    "task": {
+        "cannot_create_task": "Impossibile eseguire task {action}"
+    }
+}
