@@ -1,7 +1,8 @@
 {
   "name": "Dokuwiki",
   "description": {
-    "en": "Wiki that doesn't require a database"
+    "en": "The wiki that doesn't require a database",
+    "it": "Il wiki che non richiede un database"
   },
   "categories": [
     "collaboration"
