@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#
+# Copyright (C) 2023 Nethesis S.r.l.
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+
+exec 1>&2
+
+# we need to create a log folder for the upgrade to 20230404
+/usr/bin/podman run -d --rm --name dokuwiki_upgrade -v dokuwiki-data:/bitnami/dokuwiki:z ${DOKUWIKI_IMAGE}
+/usr/bin/podman exec -ti dokuwiki_upgrade mkdir -vp /bitnami/dokuwiki/data/log
+/usr/bin/podman stop dokuwiki_upgrade
