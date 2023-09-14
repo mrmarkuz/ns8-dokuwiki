@@ -54,7 +54,7 @@ buildah config --entrypoint=/ \
     --label="org.nethserver.tcp-ports-demand=1" \
     --label="org.nethserver.rootfull=0" \
     --label="org.nethserver.authorizations=traefik@any:routeadm" \
-    --label="org.nethserver.images=docker.io/bitnami/dokuwiki:20200729.0.0-debian-10-r299" \
+    --label="org.nethserver.images=docker.io/bitnami/dokuwiki:20230404.1.0-debian-11-r77" \
     "${container}"
 # Commit everything
 buildah commit "${container}" "${repobase}/${reponame}"
