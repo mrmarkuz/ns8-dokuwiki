@@ -8,6 +8,8 @@
 exec 1>&2
 
 # we need to create a log folder for the upgrade to 20230404
-/usr/bin/podman run -d --rm --name dokuwiki_upgrade -v dokuwiki-data:/bitnami/dokuwiki:z ${DOKUWIKI_IMAGE}
-/usr/bin/podman exec -ti dokuwiki_upgrade mkdir -vp /bitnami/dokuwiki/data/log
-/usr/bin/podman stop dokuwiki_upgrade
+if [[ "$PREV_DOKUWIKI_IMAGE" == "docker.io/bitnami/dokuwiki:20200729.0.0-debian-10-r299" ]]; then
+    /usr/bin/podman run -d --rm --name dokuwiki_upgrade -v dokuwiki-data:/bitnami/dokuwiki:z ${DOKUWIKI_IMAGE}
+    /usr/bin/podman exec -ti dokuwiki_upgrade mkdir -vp /bitnami/dokuwiki/data/log
+    /usr/bin/podman stop dokuwiki_upgrade
+fi
