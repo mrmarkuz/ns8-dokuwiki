@@ -3,7 +3,19 @@
         "wiki_fqdn": "FQDN Wiki",
         "admin_username": "Nombre de usuario del administrador",
         "wiki_name": "Nombre Wiki",
-        "admin_full_name": "Nombre completo del administrador"
+        "admin_full_name": "Nombre completo del administrador",
+        "configuring": "Configurando...",
+        "disabled": "Deshabilitado",
+        "instance_configuration": "Configurar {instance}",
+        "http_to_https": "HTTP a HTTPS",
+        "admin_password": "Contraseña de administrador",
+        "lets_encrypt": "Let's Encrypt",
+        "email_format": "Dirección de correo no válida",
+        "save": "Guardar",
+        "enabled": "Habilitado",
+        "show_password": "Mostrar contraseña",
+        "title": "Ajustes",
+        "hide_password": "Ocultar contraseña"
     },
     "common": {
         "required": "Requerido",
@@ -18,14 +30,39 @@
         "app_instance": "Instancia de aplicación",
         "title": "Estado",
         "installation_node": "Nodo de instalación",
-        "node": "Nodo"
+        "node": "Nodo",
+        "created": "Creado",
+        "size": "Tamaño",
+        "name": "Nombre",
+        "no_images": "No hay imágenes",
+        "no_services": "No hay servicios",
+        "inactive_services": "{num} servicio inactivo | {num} servicios inactivos",
+        "mount": "Montar",
+        "no_volumes": "No hay volúmenes"
     },
     "action": {
         "configure-module": "",
         "get-configuration": "Obtener la configuración",
-        "get-name": "Obtener nombre"
+        "get-name": "Obtener nombre",
+        "get-module-info": "Obtener información del módulo",
+        "get-status": "Obtener estado"
     },
     "error": {
-        "network_timeout": "Tiempo de espera de red agotado"
+        "network_timeout": "Tiempo de espera de red agotado",
+        "403": "Operación no autorizada",
+        "cannot_retrieve_installed_modules": "No es posible recibir los módulos instalados",
+        "401": "Autenticación no válida",
+        "cannot_retrieve_module_info": "No es posible recibir la información del módulo",
+        "generic_error": "Algo ha salido mal",
+        "error": "Error",
+        "404": "Recurso no encontrado",
+        "network_error": "Error de red",
+        "validation_error": "Error de validación"
+    },
+    "about": {
+        "title": "Acerca de"
+    },
+    "task": {
+        "cannot_create_task": "No se puede crear la tarea {action}"
     }
 }
