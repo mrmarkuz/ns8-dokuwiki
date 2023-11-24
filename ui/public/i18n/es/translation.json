@@ -15,7 +15,8 @@
         "enabled": "Habilitado",
         "show_password": "Mostrar contraseña",
         "title": "Ajustes",
-        "hide_password": "Ocultar contraseña"
+        "hide_password": "Ocultar contraseña",
+        "admin_email": "Dirección de correo electrónico de administrador"
     },
     "common": {
         "required": "Requerido",
