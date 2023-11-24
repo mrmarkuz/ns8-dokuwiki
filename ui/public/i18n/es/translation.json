@@ -5,14 +5,14 @@
         "wiki_name": "Nombre Wiki",
         "admin_full_name": "Nombre completo del administrador",
         "configuring": "Configurando...",
-        "disabled": "Desactivado",
+        "disabled": "Deshabilitado",
         "instance_configuration": "Configurar {instance}",
         "http_to_https": "HTTP a HTTPS",
         "admin_password": "Contraseña de administrador",
         "lets_encrypt": "Let's Encrypt",
         "email_format": "Dirección de correo no válida",
         "save": "Guardar",
-        "enabled": "Activado",
+        "enabled": "Habilitado",
         "show_password": "Mostrar contraseña",
         "title": "Ajustes",
         "hide_password": "Ocultar contraseña",
@@ -23,7 +23,7 @@
         "work_in_progress": "Trabajando"
     },
     "status": {
-        "app_volumes": "Volumen de las aplicación | Volúmenes de las aplicaciones",
+        "app_volumes": "Volúmen de App | Volúmenes de App",
         "services": "Servicio | Servicios",
         "app_images": "Imagen de la aplicación | Imágenes de la aplicación",
         "failed_services": "{num} servicio fallido | {num} servicios fallidos",
@@ -32,14 +32,14 @@
         "title": "Estado",
         "installation_node": "Nodo de instalación",
         "node": "Nodo",
-        "created": "Creada",
+        "created": "Creado",
         "size": "Tamaño",
         "name": "Nombre",
-        "no_images": "Sin imágenes",
-        "no_services": "Sin servicios",
+        "no_images": "No hay imágenes",
+        "no_services": "No hay servicios",
         "inactive_services": "{num} servicio inactivo | {num} servicios inactivos",
         "mount": "Montar",
-        "no_volumes": "Sin volúmenes"
+        "no_volumes": "No hay volúmenes"
     },
     "action": {
         "configure-module": "Configurar el módulo",
@@ -49,15 +49,15 @@
         "get-status": "Obtener el estado"
     },
     "error": {
-        "network_timeout": "Tiempo de espera de la red",
+        "network_timeout": "Tiempo de espera de red agotado",
         "403": "Operation not authorized",
-        "cannot_retrieve_installed_modules": "No se pueden recuperar los módulos instalados",
-        "401": "Autenticación inválida",
-        "cannot_retrieve_module_info": "No se puede recuperar la información del módulo",
-        "generic_error": "Algo salió mal",
+        "cannot_retrieve_installed_modules": "No es posible recibir los módulos instalados",
+        "401": "Autenticación no válida",
+        "cannot_retrieve_module_info": "No es posible recibir la información del módulo",
+        "generic_error": "Algo ha salido mal",
         "error": "Error",
         "404": "Recurso no encontrado",
-        "network_error": "Error en la red",
+        "network_error": "Error de red",
         "validation_error": "Error de validación"
     },
     "about": {
