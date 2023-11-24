@@ -42,7 +42,7 @@
         "no_volumes": "Sin volúmenes"
     },
     "action": {
-        "configure-module": "",
+        "configure-module": "Configurar módulo",
         "get-configuration": "Obtener la configuración",
         "get-name": "Obtener nombre",
         "get-module-info": "Obtener información del módulo",
