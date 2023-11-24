@@ -3,7 +3,7 @@
         "wiki_fqdn": "FQDN Wiki",
         "admin_username": "Nombre de usuario del administrador",
         "wiki_name": "Nombre Wiki",
-        "admin_full_name": "Administrador nombre lleno",
+        "admin_full_name": "Nombre completo del administrador",
         "configuring": "Configurando...",
         "disabled": "Desactivado",
         "instance_configuration": "Configurar {instance}",
