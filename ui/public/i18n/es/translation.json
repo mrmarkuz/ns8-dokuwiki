@@ -19,7 +19,7 @@
         "admin_email": "Dirección de correo electrónico de administrador"
     },
     "common": {
-        "required": "Required",
+        "required": "Requerido",
         "work_in_progress": "Trabajando"
     },
     "status": {
