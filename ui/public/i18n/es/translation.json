@@ -27,7 +27,7 @@
         "services": "Servicio | Servicios",
         "app_images": "Imagen de App | Imágenes de App",
         "failed_services": "{num} servicio fallido | {num} servicios fallidos",
-        "active_services": "{num} servicio activo| {num} servicios activos",
+        "active_services": "{num} servicio activo | {num} servicios activos",
         "app_instance": "Instancia de aplicación",
         "title": "Estado",
         "installation_node": "Nodo de instalación",
