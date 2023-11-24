@@ -20,17 +20,17 @@
     },
     "common": {
         "required": "Requerido",
-        "work_in_progress": "Trabajo en progreso"
+        "work_in_progress": "Trabajando"
     },
     "status": {
-        "app_volumes": "Volumen de la aplicación | Volúmenes de la aplicación",
+        "app_volumes": "Volumen de las aplicación | Volúmenes de las aplicaciones",
         "services": "Servicio | Servicios",
-        "app_images": "Imagen de la aplicación | Imágenes de las aplicaciones",
+        "app_images": "Imagen de la aplicación | Imágenes de la aplicación",
         "failed_services": "{num} servicio fallido | {num} servicios fallidos",
         "active_services": "{num} servicio activo | {num} servicios activos",
         "app_instance": "Instancia de la aplicación",
         "title": "Estado",
-        "installation_node": "Nodo de la instalación",
+        "installation_node": "Nodo de instalación",
         "node": "Nodo",
         "created": "Creada",
         "size": "Tamaño",
@@ -42,22 +42,22 @@
         "no_volumes": "Sin volúmenes"
     },
     "action": {
-        "configure-module": "Configurar módulo",
+        "configure-module": "Configurar el módulo",
         "get-configuration": "Obtener la configuración",
-        "get-name": "Obtener nombre",
+        "get-name": "Obtener el nombre",
         "get-module-info": "Obtener información del módulo",
         "get-status": "Obtener el estado"
     },
     "error": {
-        "network_timeout": "Tiempo de espera de red agotado",
+        "network_timeout": "Tiempo de espera de la red",
         "403": "Operación no autorizada",
-        "cannot_retrieve_installed_modules": "No es posible recibir los módulos instalados",
-        "401": "Autenticación no válida",
-        "cannot_retrieve_module_info": "No es posible recibir la información del módulo",
-        "generic_error": "Algo ha salido mal",
+        "cannot_retrieve_installed_modules": "No se pueden recuperar los módulos instalados",
+        "401": "Autenticación inválida",
+        "cannot_retrieve_module_info": "No se puede recuperar la información del módulo",
+        "generic_error": "Algo salió mal",
         "error": "Error",
         "404": "Recurso no encontrado",
-        "network_error": "Error de red",
+        "network_error": "Error en la red",
         "validation_error": "Error de validación"
     },
     "about": {
