@@ -1,1 +1,31 @@
-{}
+{
+    "settings": {
+        "wiki_fqdn": "FQDN Wiki",
+        "admin_username": "Nombre de usuario del administrador",
+        "wiki_name": "Nombre Wiki",
+        "admin_full_name": "Nombre completo del administrador"
+    },
+    "common": {
+        "required": "Requerido",
+        "work_in_progress": "Trabajo en progreso"
+    },
+    "status": {
+        "app_volumes": "Volúmen de App | Volúmenes de App",
+        "services": "Servicio | Servicios",
+        "app_images": "Imagen de App | Imágenes de App",
+        "failed_services": "{num} servicio fallido | {num} servicios fallidos",
+        "active_services": "{num} servicio activo| {num} servicios activos",
+        "app_instance": "Instancia de aplicación",
+        "title": "Estado",
+        "installation_node": "Nodo de instalación",
+        "node": "Nodo"
+    },
+    "action": {
+        "configure-module": "",
+        "get-configuration": "Obtener la configuración",
+        "get-name": "Obtener nombre"
+    },
+    "error": {
+        "network_timeout": "Tiempo de espera de red agotado"
+    }
+}
