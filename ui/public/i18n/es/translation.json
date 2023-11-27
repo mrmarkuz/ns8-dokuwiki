@@ -19,7 +19,7 @@
         "admin_email": "Dirección de correo electrónico de administrador"
     },
     "common": {
-        "required": "Obligatorio",
+        "required": "Required",
         "work_in_progress": "Trabajo en curso"
     },
     "status": {
@@ -32,9 +32,9 @@
         "title": "Estado",
         "installation_node": "Nodo de instalación",
         "node": "Nodo",
-        "created": "Creado",
-        "size": "Tamaño",
-        "name": "Nombre",
+        "created": "Created",
+        "size": "Size",
+        "name": "Name",
         "no_images": "No hay imágenes",
         "no_services": "No hay servicios",
         "inactive_services": "{num} servicio inactivo | {num} servicios inactivos",
@@ -50,7 +50,7 @@
     },
     "error": {
         "network_timeout": "Tiempo de espera de red agotado",
-        "403": "Operación no autorizada",
+        "403": "Operation not authorized",
         "cannot_retrieve_installed_modules": "No es posible recibir los módulos instalados",
         "401": "Autenticación no válida",
         "cannot_retrieve_module_info": "No es posible recibir la información del módulo",
