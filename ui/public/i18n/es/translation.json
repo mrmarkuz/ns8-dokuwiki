@@ -25,7 +25,7 @@
     "status": {
         "app_volumes": "Volúmen de aplicación | Volúmenes de aplicaciones",
         "services": "Servicio | Servicios",
-        "app_images": "Imagen de App | Imágenes de App",
+        "app_images": "Imagen de la aplicación | Imágenes de la aplicación",
         "failed_services": "{num} servicio fallido | {num} servicios fallidos",
         "active_services": "{num} servicio activo | {num} servicios activos",
         "app_instance": "Instancia de la aplicación",
@@ -35,8 +35,8 @@
         "created": "Created",
         "size": "Size",
         "name": "Name",
-        "no_images": "No hay imágenes",
-        "no_services": "No hay servicios",
+        "no_images": "Sin imágenes",
+        "no_services": "Sin servicios",
         "inactive_services": "{num} servicio inactivo | {num} servicios inactivos",
         "mount": "Montar",
         "no_volumes": "Sin volúmenes"
@@ -49,16 +49,16 @@
         "get-status": "Obtener el estado"
     },
     "error": {
-        "network_timeout": "Tiempo de espera de red agotado",
+        "network_timeout": "Tiempo de espera en la red",
         "403": "Operation not authorized",
-        "cannot_retrieve_installed_modules": "No es posible recibir los módulos instalados",
-        "401": "Autenticación no válida",
-        "cannot_retrieve_module_info": "No es posible recibir la información del módulo",
+        "cannot_retrieve_installed_modules": "No se pueden recuperar los módulos instalados",
+        "401": "Autentificación inválida",
+        "cannot_retrieve_module_info": "No se puede recuperar la información del módulo",
         "generic_error": "Algo ha salido mal",
         "error": "Error",
         "404": "Recurso no encontrado",
-        "network_error": "Error de red",
-        "validation_error": "Error de validación"
+        "network_error": "Error en la red",
+        "validation_error": "Error en la validación"
     },
     "about": {
         "title": "Acerca de"
