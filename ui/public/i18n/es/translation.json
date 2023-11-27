@@ -5,65 +5,65 @@
         "wiki_name": "Nombre Wiki",
         "admin_full_name": "Nombre completo del administrador",
         "configuring": "Configurando...",
-        "disabled": "Disabled",
-        "instance_configuration": "Configure {instance}",
+        "disabled": "Deshabilitado",
+        "instance_configuration": "Configurar {instance}",
         "http_to_https": "HTTP a HTTPS",
         "admin_password": "Contraseña de administrador",
         "lets_encrypt": "Let's Encrypt",
         "email_format": "Dirección de correo no válida",
-        "save": "Save",
-        "enabled": "Enabled",
+        "save": "Guardar",
+        "enabled": "Habilitado",
         "show_password": "Mostrar contraseña",
-        "title": "Settings",
+        "title": "Ajustes",
         "hide_password": "Ocultar contraseña",
         "admin_email": "Dirección de correo electrónico de administrador"
     },
     "common": {
         "required": "Obligatorio",
-        "work_in_progress": "Work in progress"
+        "work_in_progress": "Trabajo en curso"
     },
     "status": {
-        "app_volumes": "App volume | App volumes",
-        "services": "Service | Services",
-        "app_images": "App image | App images",
+        "app_volumes": "Volumen de la aplicación | Volúmenes de la aplicación",
+        "services": "Servicio | Servicios",
+        "app_images": "Imagen de la aplicación | Imágenes de la aplicación",
         "failed_services": "{num} servicio fallido | {num} servicios fallidos",
         "active_services": "{num} servicio activo | {num} servicios activos",
-        "app_instance": "App instance",
-        "title": "Status",
-        "installation_node": "Installation node",
-        "node": "Node",
-        "created": "Created",
-        "size": "Size",
-        "name": "Name",
-        "no_images": "No images",
-        "no_services": "No services",
+        "app_instance": "Instancia de la aplicación",
+        "title": "Estado",
+        "installation_node": "Nodo de la instalación",
+        "node": "Nodo",
+        "created": "Creado",
+        "size": "Tamaño",
+        "name": "Nombre",
+        "no_images": "Sin imágenes",
+        "no_services": "Sin servicios",
         "inactive_services": "{num} servicio inactivo | {num} servicios inactivos",
-        "mount": "Mount",
-        "no_volumes": "No volumes"
+        "mount": "Montar",
+        "no_volumes": "Sin volúmenes"
     },
     "action": {
-        "configure-module": "Configure module",
-        "get-configuration": "Get configuration",
-        "get-name": "Get name",
-        "get-module-info": "Get module info",
-        "get-status": "Get status"
+        "configure-module": "Configurar el módulo",
+        "get-configuration": "Obtener la configuración",
+        "get-name": "Obtener el nombre",
+        "get-module-info": "Obtener la información del módulo",
+        "get-status": "Obtener el estado"
     },
     "error": {
-        "network_timeout": "Network timeout",
-        "403": "Operation not authorized",
-        "cannot_retrieve_installed_modules": "Cannot retrieve installed modules",
-        "401": "Invalid authentication",
-        "cannot_retrieve_module_info": "Cannot retrieve module info",
-        "generic_error": "Something went wrong",
+        "network_timeout": "Tiempo de espera de la red",
+        "403": "Operación no autorizada",
+        "cannot_retrieve_installed_modules": "No se pueden recuperar los módulos instalados",
+        "401": "Autentificación inválida",
+        "cannot_retrieve_module_info": "No se puede recuperar la información del módulo",
+        "generic_error": "Algo salió mal",
         "error": "Error",
-        "404": "Resource not found",
-        "network_error": "Network error",
-        "validation_error": "Validation error"
+        "404": "Recurso no encontrado",
+        "network_error": "Fallo en la red",
+        "validation_error": "Fallo en la validación"
     },
     "about": {
-        "title": "About"
+        "title": "Acerca de"
     },
     "task": {
-        "cannot_create_task": "Cannot create task {action}"
+        "cannot_create_task": "No se puede crear la tarea {action}"
     }
 }
