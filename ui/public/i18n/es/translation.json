@@ -23,9 +23,9 @@
         "work_in_progress": "Trabajo en curso"
     },
     "status": {
-        "app_volumes": "Volúmen de aplicación | Volúmenes de aplicaciones",
+        "app_volumes": "Volumen de aplicación | Volúmenes de aplicación",
         "services": "Servicio | Servicios",
-        "app_images": "Imagen de App | Imágenes de App",
+        "app_images": "Imagen de la aplicación | Imágenes de la aplicación",
         "failed_services": "{num} servicio fallido | {num} servicios fallidos",
         "active_services": "{num} servicio activo | {num} servicios activos",
         "app_instance": "Instancia de la aplicación",
@@ -35,8 +35,8 @@
         "created": "Creado",
         "size": "Tamaño",
         "name": "Nombre",
-        "no_images": "No hay imágenes",
-        "no_services": "No hay servicios",
+        "no_images": "Sin imágenes",
+        "no_services": "Sin servicios",
         "inactive_services": "{num} servicio inactivo | {num} servicios inactivos",
         "mount": "Montar",
         "no_volumes": "Sin volúmenes"
@@ -51,13 +51,13 @@
     "error": {
         "network_timeout": "Tiempo de espera de red agotado",
         "403": "Operación no autorizada",
-        "cannot_retrieve_installed_modules": "No es posible recibir los módulos instalados",
+        "cannot_retrieve_installed_modules": "No se pueden recuperar los módulos instalados",
         "401": "Autenticación no válida",
-        "cannot_retrieve_module_info": "No es posible recibir la información del módulo",
-        "generic_error": "Algo ha salido mal",
+        "cannot_retrieve_module_info": "No se puede recuperar la información del módulo",
+        "generic_error": "Algo salió mal",
         "error": "Error",
         "404": "Recurso no encontrado",
-        "network_error": "Error de red",
+        "network_error": "Fallo de red",
         "validation_error": "Error de validación"
     },
     "about": {

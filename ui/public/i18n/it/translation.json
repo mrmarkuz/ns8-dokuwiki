@@ -31,7 +31,7 @@
         "app_images": "Immagine app|Immagini app",
         "app_instance": "Istanza app",
         "app_volumes": "Volume app|Volumi app",
-        "installation_node": "Nodo",
+        "installation_node": "Nodo di installazione",
         "mount": "Percorso di mount",
         "active_services": "{num} servizio attivo | {num} servizi attivi",
         "failed_services": "{num} servizio fallito | {num} servizi falliti",
