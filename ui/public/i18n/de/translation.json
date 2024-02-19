@@ -1,13 +1,13 @@
 {
     "common": {
-        "required": "Benötigt",
-        "work_in_progress": "Laufende Arbeiten"
+        "required": "erforderlich",
+        "work_in_progress": "in Arbeit"
     },
     "status": {
         "title": "Status",
         "node": "Knoten",
         "installation_node": "Installationsknoten",
-        "app_instance": "App Instanz",
+        "app_instance": "App-Instanz",
         "services": "Dienst | Dienste",
         "app_images": "App image | App images",
         "app_volumes": "App Laufwerk | App Laufwerke",
