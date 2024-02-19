@@ -30,7 +30,7 @@
         "title": "Einstellungen",
         "admin_username": "Administrator Anwendername",
         "admin_email": "Administrator E-Mailadresse",
-        "admin_password": "Administrator Passwort",
+        "admin_password": "Administrator-Passwort",
         "admin_full_name": "Administrator vollständiger Name",
         "wiki_fqdn": "Wiki FQDN",
         "show_password": "Passwort anzeigen",
