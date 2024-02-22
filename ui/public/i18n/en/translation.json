@@ -39,7 +39,9 @@
     "disabled": "Disabled",
     "instance_configuration": "Configure {instance}",
     "configuring": "Configuring...",
-    "email_format": "Invalid email address"
+    "email_format": "Invalid email address",
+    "host_pattern": "Must be a valid fully qualified domain name",
+    "host_format": "Must be a valid fully qualified domain name"
   },
   "about": {
     "title": "About"
