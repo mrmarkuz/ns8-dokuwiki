@@ -24,8 +24,8 @@
     },
     "settings": {
         "wiki_name": "Wiki-Name",
-        "instance_configuration": "Configure {instance}",
-        "configuring": "Configuring...",
+        "instance_configuration": "{instance} konfigurieren",
+        "configuring": "Konfiguriere...",
         "email_format": "ungültige E-Mailadresse",
         "title": "Einstellungen",
         "admin_username": "Administrator Anwendername",
@@ -37,9 +37,11 @@
         "hide_password": "Passwort verbergen",
         "save": "Speichern",
         "lets_encrypt": "Let's Encrypt",
-        "http_to_https": "HTTP to HTTPS",
-        "enabled": "Enabled",
-        "disabled": "Disabled"
+        "http_to_https": "HTTP zu HTTPS",
+        "enabled": "Aktiviert",
+        "disabled": "Deaktiviert",
+        "host_pattern": "Voll-qualifizierter Domänen-Name (FQDN) erforderlich",
+        "host_format": "Voll-qualifizierter Domänen-Name (FQDN) erforderlich"
     },
     "about": {
         "title": "Über"
@@ -50,8 +52,8 @@
         "network_timeout": "Netzwerk-Zeitüberschreitung",
         "401": "Ungültige Authentifizierung",
         "403": "Operation nicht genehmigt",
-        "cannot_retrieve_module_info": "Cannot retrieve module info",
-        "cannot_retrieve_installed_modules": "Cannot retrieve installed modules",
+        "cannot_retrieve_module_info": "Modul-Info kann nicht abgerufen werden",
+        "cannot_retrieve_installed_modules": "Installierte Module können nicht abgerufen werden",
         "validation_error": "Überprüfungsfehler",
         "error": "Fehler",
         "404": "Ressource nicht gefunden"
@@ -60,10 +62,10 @@
         "cannot_create_task": "Aufgabe {action} kann nicht erstellt werden"
     },
     "action": {
-        "get-status": "Get status",
-        "get-configuration": "Get configuration",
-        "configure-module": "Configure module",
-        "get-module-info": "Get module info",
-        "get-name": "Get name"
+        "get-status": "Status abrufen",
+        "get-configuration": "Konfiguration abrufen",
+        "configure-module": "Modul konfigurieren",
+        "get-module-info": "Modul-Info abrufen",
+        "get-name": "Namen abrufen"
     }
 }
