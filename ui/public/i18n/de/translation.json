@@ -25,7 +25,7 @@
     "settings": {
         "wiki_name": "Wiki-Name",
         "instance_configuration": "Configure {instance}",
-        "configuring": "Konfiguriere...",
+        "configuring": "Configuring...",
         "email_format": "ungültige E-Mailadresse",
         "title": "Einstellungen",
         "admin_username": "Administrator Anwendername",
@@ -37,7 +37,7 @@
         "hide_password": "Passwort verbergen",
         "save": "Speichern",
         "lets_encrypt": "Let's Encrypt",
-        "http_to_https": "HTTP zu HTTPS",
+        "http_to_https": "HTTP to HTTPS",
         "enabled": "Enabled",
         "disabled": "Disabled"
     },
