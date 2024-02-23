@@ -1,33 +1,33 @@
 {
     "common": {
-        "required": "Required",
-        "work_in_progress": "Work in progress"
+        "required": "Erforderlich",
+        "work_in_progress": "in Arbeit"
     },
     "status": {
         "title": "Status",
-        "node": "Node",
-        "installation_node": "Installation node",
-        "app_instance": "App instance",
-        "services": "Service | Services",
-        "app_images": "App image | App images",
-        "app_volumes": "App volume | App volumes",
+        "node": "Knoten",
+        "installation_node": "Installations-Knoten",
+        "app_instance": "App-Instanz",
+        "services": "Dienst | Dienste",
+        "app_images": "App Abbild | App Abbilder",
+        "app_volumes": "App Volumen | App Volumen",
         "failed_services": "{num} fehlgeschlagener Dienst | {num} fehlgeschlagene Dienste",
         "active_services": "{num} aktiver Dienst | {num} aktive Dienste",
         "inactive_services": "{num} inaktiver Dienst | {num} inaktive Dienste",
         "name": "Name",
-        "size": "Size",
-        "created": "Created",
-        "mount": "Mount",
-        "no_services": "No services",
-        "no_images": "No images",
-        "no_volumes": "No volumes"
+        "size": "Größe",
+        "created": "Erstellt",
+        "mount": "Einhängepunkt",
+        "no_services": "Keine Dienste",
+        "no_images": "Keine Abbilder",
+        "no_volumes": "Keine Volumen"
     },
     "settings": {
         "wiki_name": "Wiki-Name",
         "instance_configuration": "Configure {instance}",
         "configuring": "Konfiguriere...",
         "email_format": "ungültige E-Mailadresse",
-        "title": "Settings",
+        "title": "Einstellungen",
         "admin_username": "Administrator Anwendername",
         "admin_email": "Administrator E-Mailadresse",
         "admin_password": "Administrator-Passwort",
@@ -35,29 +35,29 @@
         "wiki_fqdn": "Wiki FQDN",
         "show_password": "Passwort anzeigen",
         "hide_password": "Passwort verbergen",
-        "save": "Save",
+        "save": "Speichern",
         "lets_encrypt": "Let's Encrypt",
         "http_to_https": "HTTP zu HTTPS",
         "enabled": "Enabled",
         "disabled": "Disabled"
     },
     "about": {
-        "title": "About"
+        "title": "Über"
     },
     "error": {
-        "generic_error": "Something went wrong",
-        "network_error": "Network error",
-        "network_timeout": "Network timeout",
-        "401": "Invalid authentication",
-        "403": "Operation not authorized",
+        "generic_error": "Etwas ist schief gegangen",
+        "network_error": "Netzwerk-Fehler",
+        "network_timeout": "Netzwerk-Zeitüberschreitung",
+        "401": "Ungültige Authentifizierung",
+        "403": "Operation nicht genehmigt",
         "cannot_retrieve_module_info": "Cannot retrieve module info",
         "cannot_retrieve_installed_modules": "Cannot retrieve installed modules",
-        "validation_error": "Validation error",
-        "error": "Error",
-        "404": "Resource not found"
+        "validation_error": "Überprüfungsfehler",
+        "error": "Fehler",
+        "404": "Ressource nicht gefunden"
     },
     "task": {
-        "cannot_create_task": "Cannot create task {action}"
+        "cannot_create_task": "Aufgabe {action} kann nicht erstellt werden"
     },
     "action": {
         "get-status": "Get status",
