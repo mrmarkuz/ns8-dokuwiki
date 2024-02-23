@@ -1,33 +1,33 @@
 {
     "common": {
-        "required": "erforderlich",
-        "work_in_progress": "in Arbeit"
+        "required": "Required",
+        "work_in_progress": "Work in progress"
     },
     "status": {
         "title": "Status",
-        "node": "Knoten",
-        "installation_node": "Installationsknoten",
-        "app_instance": "App-Instanz",
-        "services": "Dienst | Dienste",
-        "app_images": "App image | App imagesApp image | App images",
-        "app_volumes": "App Laufwerk | App Laufwerke",
+        "node": "Node",
+        "installation_node": "Installation node",
+        "app_instance": "App instance",
+        "services": "Service | Services",
+        "app_images": "App image | App images",
+        "app_volumes": "App volume | App volumes",
         "failed_services": "{num} fehlgeschlagener Dienst | {num} fehlgeschlagene Dienste",
         "active_services": "{num} aktiver Dienst | {num} aktive Dienste",
         "inactive_services": "{num} inaktiver Dienst | {num} inaktive Dienste",
         "name": "Name",
-        "size": "Größe",
-        "created": "erstellt",
-        "mount": "Einbindung",
-        "no_services": "kein Dienst",
-        "no_images": "keine Abbilder",
-        "no_volumes": "Keine Laufwerke"
+        "size": "Size",
+        "created": "Created",
+        "mount": "Mount",
+        "no_services": "No services",
+        "no_images": "No images",
+        "no_volumes": "No volumes"
     },
     "settings": {
         "wiki_name": "Wiki-Name",
-        "instance_configuration": "Konfiguriere {instance}",
+        "instance_configuration": "Configure {instance}",
         "configuring": "Konfiguriere...",
         "email_format": "ungültige E-Mailadresse",
-        "title": "Einstellungen",
+        "title": "Settings",
         "admin_username": "Administrator Anwendername",
         "admin_email": "Administrator E-Mailadresse",
         "admin_password": "Administrator-Passwort",
@@ -35,35 +35,35 @@
         "wiki_fqdn": "Wiki FQDN",
         "show_password": "Passwort anzeigen",
         "hide_password": "Passwort verbergen",
-        "save": "speichern",
+        "save": "Save",
         "lets_encrypt": "Let's Encrypt",
         "http_to_https": "HTTP zu HTTPS",
-        "enabled": "Aktiviert",
-        "disabled": "Deaktiviert"
+        "enabled": "Enabled",
+        "disabled": "Disabled"
     },
     "about": {
-        "title": "Über"
+        "title": "About"
     },
     "error": {
-        "generic_error": "Etwas ist fehl gelaufen",
-        "network_error": "Netzwerkfehler",
-        "network_timeout": "Zeitüberschreitung im Netzwerk",
-        "401": "ungültige Authentisierung",
-        "403": "Vorgang nicht erlaubt",
-        "cannot_retrieve_module_info": "Modulinformationen können nicht abgerufen werden",
-        "cannot_retrieve_installed_modules": "Installierte Module können nicht abgerufen werden",
-        "validation_error": "Überprüfungsfehler",
-        "error": "Fehler",
-        "404": "Ressource nicht gefunden"
+        "generic_error": "Something went wrong",
+        "network_error": "Network error",
+        "network_timeout": "Network timeout",
+        "401": "Invalid authentication",
+        "403": "Operation not authorized",
+        "cannot_retrieve_module_info": "Cannot retrieve module info",
+        "cannot_retrieve_installed_modules": "Cannot retrieve installed modules",
+        "validation_error": "Validation error",
+        "error": "Error",
+        "404": "Resource not found"
     },
     "task": {
-        "cannot_create_task": "Aufgabe kann nicht erstellt werden {action}"
+        "cannot_create_task": "Cannot create task {action}"
     },
     "action": {
-        "get-status": "Status ermitteln",
-        "get-configuration": "Konfiguration abrufen",
-        "configure-module": "Modul konfigurieren",
-        "get-module-info": "Modulinformationen abrufen",
-        "get-name": "Name abrufen"
+        "get-status": "Get status",
+        "get-configuration": "Get configuration",
+        "configure-module": "Configure module",
+        "get-module-info": "Get module info",
+        "get-name": "Get name"
     }
 }
