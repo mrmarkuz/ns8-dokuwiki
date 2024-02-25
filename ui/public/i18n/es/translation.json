@@ -16,7 +16,9 @@
         "show_password": "Mostrar contraseña",
         "title": "Ajustes",
         "hide_password": "Ocultar contraseña",
-        "admin_email": "Dirección de correo electrónico de administrador"
+        "admin_email": "Dirección de correo electrónico de administrador",
+        "host_pattern": "Debe ser un nombre de dominio válido y completo",
+        "host_format": "Debe ser un nombre de dominio válido y completo"
     },
     "common": {
         "required": "Obligatorio",
