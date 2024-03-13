@@ -2,10 +2,6 @@ name: "Publish images"
 
 on:
   push:
-    branches-ignore:
-      - "renovate/**"
-    tags:
-      - "**"
 
 permissions:
   packages: write
