@@ -15,6 +15,16 @@
         />
       </div>
     </div>
+    <div v-if="already_set" class="bx--row">
+      <div class="bx--col">
+        <NsInlineNotification
+          kind="info"
+          :title="$t('settings.cannot_be_configured_again')"
+          :description="$t('settings.must_be_configured_inside_dokuwiki')"
+          :showCloseButton="false"
+        />
+      </div>
+    </div>
     <div class="bx--row">
       <div class="bx--col-lg-16">
         <cv-tile :light="true">
