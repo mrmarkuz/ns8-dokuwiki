@@ -30,6 +30,7 @@
     "admin_email": "Administrator email address",
     "admin_full_name": "Administrator full name",
     "wiki_fqdn": "Wiki FQDN",
+    "host_pattern": "Must be a valid fully qualified domain name",
     "show_password": "Show password",
     "hide_password": "Hide password",
     "save": "Save",
