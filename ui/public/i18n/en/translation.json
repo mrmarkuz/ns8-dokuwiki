@@ -40,6 +40,8 @@
     "disabled": "Disabled",
     "instance_configuration": "Configure {instance}",
     "configuring": "Configuring...",
+    "cannot_be_configured_again": "This instance cannot be configured anymore here",
+    "must_be_configured_inside_dokuwiki": "The admin user and settings must be configured inside DokuWiki",
     "email_format": "Invalid email address"
   },
   "about": {
