@@ -1,0 +1,71 @@
+{
+    "common": {
+        "required": "Erforderlich",
+        "work_in_progress": "in Arbeit"
+    },
+    "status": {
+        "title": "Status",
+        "node": "Knoten",
+        "installation_node": "Installations-Knoten",
+        "app_instance": "App-Instanz",
+        "services": "Dienst | Dienste",
+        "app_images": "App Abbild | App Abbilder",
+        "app_volumes": "App Volumen | App Volumen",
+        "failed_services": "{num} Dienst fehlerhaft | {num} Dienste fehlerhaft",
+        "active_services": "{num} aktiver Dienst | {num} aktive Dienste",
+        "inactive_services": "{num} inaktiver Dienst | {num} inaktive Dienste",
+        "name": "Name",
+        "size": "Größe",
+        "created": "Erstellt",
+        "mount": "Einhängepunkt",
+        "no_services": "Keine Dienste",
+        "no_images": "Keine Abbilder",
+        "no_volumes": "Keine Volumen"
+    },
+    "settings": {
+        "wiki_name": "Wiki-Name",
+        "instance_configuration": "{instance} konfigurieren",
+        "configuring": "Konfiguriere...",
+        "email_format": "E-Mail Adresse fehlerhaft",
+        "title": "Einstellungen",
+        "admin_username": "Administrator Anwendername",
+        "admin_email": "Administrator E-Mailadresse",
+        "admin_password": "Administrator-Passwort",
+        "admin_full_name": "Administrator vollständiger Name",
+        "wiki_fqdn": "Wiki FQDN",
+        "show_password": "Passwort anzeigen",
+        "hide_password": "Passwort verbergen",
+        "save": "Speichern",
+        "lets_encrypt": "Let's Encrypt",
+        "http_to_https": "HTTP zu HTTPS",
+        "enabled": "Aktiviert",
+        "disabled": "Deaktiviert",
+        "host_pattern": "Voll-qualifizierter Domänen-Name (FQDN) erforderlich",
+        "host_format": "Voll-qualifizierter Domänen-Name (FQDN) erforderlich"
+    },
+    "about": {
+        "title": "Über"
+    },
+    "error": {
+        "generic_error": "Etwas ist schief gegangen",
+        "network_error": "Netzwerk-Fehler",
+        "network_timeout": "Netzwerk-Zeitüberschreitung",
+        "401": "Ungültige Authentifizierung",
+        "403": "Operation nicht genehmigt",
+        "cannot_retrieve_module_info": "Modul-Info kann nicht abgerufen werden",
+        "cannot_retrieve_installed_modules": "Installierte Module können nicht abgerufen werden",
+        "validation_error": "Überprüfungsfehler",
+        "error": "Fehler",
+        "404": "Ressource nicht gefunden"
+    },
+    "task": {
+        "cannot_create_task": "Aufgabe {action} kann nicht erstellt werden"
+    },
+    "action": {
+        "get-status": "Status abrufen",
+        "get-configuration": "Konfiguration abrufen",
+        "configure-module": "Modul konfigurieren",
+        "get-module-info": "Modul-Info abrufen",
+        "get-name": "Namen abrufen"
+    }
+}
