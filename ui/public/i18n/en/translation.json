@@ -41,7 +41,7 @@
     "instance_configuration": "Configure {instance}",
     "configuring": "Configuring...",
     "dokuwiki_note": "Note",
-    "must_be_configured_inside_dokuwiki": "You can configure only Dokuwiki FQDN in this page. To configure other setting go to dokuwiki",
+    "must_be_configured_inside_dokuwiki": "You can configure only Dokuwiki FQDN in this page. To configure other setting go to Dokuwiki webapp",
     "go_to_dokuwiki": "Go to Dokuwiki",
     "email_format": "Invalid email address"
   },
