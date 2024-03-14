@@ -19,9 +19,11 @@
       <div class="bx--col">
         <NsInlineNotification
           kind="info"
-          :title="$t('settings.cannot_be_configured_again')"
+          :title="$t('settings.dokuwiki_note')"
           :description="$t('settings.must_be_configured_inside_dokuwiki')"
           :showCloseButton="false"
+          @click="goToDokuwikiWebapp"
+          :actionLabel="$t('settings.go_to_dokuwiki')"
         />
       </div>
     </div>
@@ -206,6 +208,9 @@ export default {
     next();
   },
   methods: {
+    goToDokuwikiWebapp() {
+      window.open(`https://${this.host}`, "_blank");
+    },
     async getConfiguration() {
       this.loading.getConfiguration = true;
       this.error.getConfiguration = "";

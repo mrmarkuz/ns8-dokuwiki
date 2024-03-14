@@ -40,8 +40,9 @@
     "disabled": "Disabled",
     "instance_configuration": "Configure {instance}",
     "configuring": "Configuring...",
-    "cannot_be_configured_again": "This instance cannot be configured anymore here",
-    "must_be_configured_inside_dokuwiki": "The admin user and settings must be configured inside DokuWiki",
+    "dokuwiki_note": "Note",
+    "must_be_configured_inside_dokuwiki": "You can configure only Dokuwiki FQDN in this page. To configure other setting go to dokuwiki",
+    "go_to_dokuwiki": "Go to Dokuwiki",
     "email_format": "Invalid email address"
   },
   "about": {
