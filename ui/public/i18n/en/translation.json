@@ -20,7 +20,11 @@
     "mount": "Mount",
     "no_services": "No services",
     "no_images": "No images",
-    "no_volumes": "No volumes"
+    "no_volumes": "No volumes",
+    "dokuwiki_webapp": "Dokuwiki webapp",
+    "not_configured": "Not configured",
+    "open_webapp": "Open Dokuwiki",
+    "configure": "Configure"
   },
   "settings": {
     "title": "Settings",
@@ -43,7 +47,9 @@
     "dokuwiki_note": "Note",
     "must_be_configured_inside_dokuwiki": "You can configure only Dokuwiki FQDN in this page. To configure other setting go to Dokuwiki webapp",
     "go_to_dokuwiki": "Go to Dokuwiki",
-    "email_format": "Invalid email address"
+    "email_format": "Invalid email address",
+    "host_pattern": "Must be a valid fully qualified domain name",
+    "host_format": "Must be a valid fully qualified domain name"
   },
   "about": {
     "title": "About"
@@ -68,6 +74,7 @@
     "403": "Operation not authorized",
     "404": "Resource not found",
     "cannot_retrieve_module_info": "Cannot retrieve module info",
-    "cannot_retrieve_installed_modules": "Cannot retrieve installed modules"
+    "cannot_retrieve_installed_modules": "Cannot retrieve installed modules",
+    "cannot_retrieve_configuration": "Cannot retrieve configuration"
   }
 }
