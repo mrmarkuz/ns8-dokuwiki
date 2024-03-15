@@ -36,17 +36,25 @@
               v-model.trim="wikiName"
               class="mg-bottom"
               :invalid-message="$t(error.wiki_name)"
-              :disabled="loading.getConfiguration || loading.configureModule || already_set"
+              :disabled="
+                loading.getConfiguration ||
+                loading.configureModule ||
+                already_set
+              "
               ref="wikiName"
             >
             </cv-text-input>
-            <template v-if="!ldap_domain">
+            <template v-if="ldap_domain == '-'">
               <cv-text-input
                 :label="$t('settings.admin_username')"
                 v-model.trim="username"
                 class="mg-bottom"
                 :invalid-message="$t(error.username)"
-                :disabled="loading.getConfiguration || loading.configureModule  || already_set"
+                :disabled="
+                  loading.getConfiguration ||
+                  loading.configureModule ||
+                  already_set
+                "
                 ref="username"
               >
               </cv-text-input>
@@ -58,7 +66,11 @@
                 :password-hide-label="$t('settings.hide_password')"
                 class="mg-bottom"
                 :invalid-message="$t(error.password)"
-                :disabled="loading.getConfiguration || loading.configureModule  || already_set"
+                :disabled="
+                  loading.getConfiguration ||
+                  loading.configureModule ||
+                  already_set
+                "
                 ref="password"
               >
               </cv-text-input>
@@ -68,7 +80,11 @@
                 v-model.trim="email"
                 class="mg-bottom"
                 :invalid-message="$t(error.email)"
-                :disabled="loading.getConfiguration || loading.configureModule  || already_set"
+                :disabled="
+                  loading.getConfiguration ||
+                  loading.configureModule ||
+                  already_set
+                "
                 ref="email"
               >
               </cv-text-input>
@@ -77,7 +93,11 @@
                 v-model.trim="userFullName"
                 class="mg-bottom"
                 :invalid-message="$t(error.user_full_name)"
-                :disabled="loading.getConfiguration || loading.configureModule  || already_set"
+                :disabled="
+                  loading.getConfiguration ||
+                  loading.configureModule ||
+                  already_set
+                "
                 ref="userFullName"
               >
               </cv-text-input>
@@ -93,6 +113,7 @@
             >
             </cv-text-input>
             <NsComboBox
+              v-if="already_set"
               v-model.trim="ldap_domain"
               :autoFilter="true"
               :autoHighlight="true"
@@ -293,17 +314,24 @@ export default {
       // force to reload value after dom update
       this.$nextTick(() => {
         this.ldap_domain = config.ldap_domain;
+        if (!this.ldap_domain) {
+          this.ldap_domain = '-';
+        }
       });
       this.ldap_domain_list = config.ldap_domain_list;
       this.ldap_domain_list.unshift({
         name: "no_user_domain",
         label: this.$t("settings.internal_authentication"),
-        value: "",
+        value: "-",
       });
       this.loading.getConfiguration = false;
       // set already_set to true if the configuration is not empty
       if (
-        this.wikiName
+        this.wikiName &&
+        this.username &&
+        this.password &&
+        this.userFullName &&
+        this.email
       ) {
         this.already_set = true;
       }
@@ -437,7 +465,7 @@ export default {
             host: this.host,
             lets_encrypt: this.isLetsEncryptEnabled,
             http2https: this.isHttpToHttpsEnabled,
-            ldap_domain: this.ldap_domain,
+            ldap_domain: this.ldap_domain == '-' ? '' : this.ldap_domain,
           },
           extra: {
             title: this.$t("settings.instance_configuration", {
