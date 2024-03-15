@@ -28,46 +28,48 @@
               ref="wikiName"
             >
             </cv-text-input>
-            <cv-text-input
-              :label="$t('settings.admin_username')"
-              v-model.trim="username"
-              class="mg-bottom"
-              :invalid-message="$t(error.username)"
-              :disabled="loading.getConfiguration || loading.configureModule"
-              ref="username"
-            >
-            </cv-text-input>
-            <cv-text-input
-              :label="$t('settings.admin_password')"
-              v-model.trim="password"
-              type="password"
-              :password-show-label="$t('settings.show_password')"
-              :password-hide-label="$t('settings.hide_password')"
-              class="mg-bottom"
-              :invalid-message="$t(error.password)"
-              :disabled="loading.getConfiguration || loading.configureModule"
-              ref="password"
-            >
-            </cv-text-input>
-            <cv-text-input
-              :label="$t('settings.admin_email')"
-              placeholder="admin@example.com"
-              v-model.trim="email"
-              class="mg-bottom"
-              :invalid-message="$t(error.email)"
-              :disabled="loading.getConfiguration || loading.configureModule"
-              ref="email"
-            >
-            </cv-text-input>
-            <cv-text-input
-              :label="$t('settings.admin_full_name')"
-              v-model.trim="userFullName"
-              class="mg-bottom"
-              :invalid-message="$t(error.user_full_name)"
-              :disabled="loading.getConfiguration || loading.configureModule"
-              ref="userFullName"
-            >
-            </cv-text-input>
+            <template v-if="!ldap_domain">
+              <cv-text-input
+                :label="$t('settings.admin_username')"
+                v-model.trim="username"
+                class="mg-bottom"
+                :invalid-message="$t(error.username)"
+                :disabled="loading.getConfiguration || loading.configureModule"
+                ref="username"
+              >
+              </cv-text-input>
+              <cv-text-input
+                :label="$t('settings.admin_password')"
+                v-model.trim="password"
+                type="password"
+                :password-show-label="$t('settings.show_password')"
+                :password-hide-label="$t('settings.hide_password')"
+                class="mg-bottom"
+                :invalid-message="$t(error.password)"
+                :disabled="loading.getConfiguration || loading.configureModule"
+                ref="password"
+              >
+              </cv-text-input>
+              <cv-text-input
+                :label="$t('settings.admin_email')"
+                placeholder="admin@example.com"
+                v-model.trim="email"
+                class="mg-bottom"
+                :invalid-message="$t(error.email)"
+                :disabled="loading.getConfiguration || loading.configureModule"
+                ref="email"
+              >
+              </cv-text-input>
+              <cv-text-input
+                :label="$t('settings.admin_full_name')"
+                v-model.trim="userFullName"
+                class="mg-bottom"
+                :invalid-message="$t(error.user_full_name)"
+                :disabled="loading.getConfiguration || loading.configureModule"
+                ref="userFullName"
+              >
+              </cv-text-input>
+            </template>
             <cv-text-input
               :label="$t('settings.wiki_fqdn')"
               placeholder="mywiki.example.org"
@@ -78,6 +80,28 @@
               ref="host"
             >
             </cv-text-input>
+            <NsComboBox
+              v-model.trim="ldap_domain"
+              :autoFilter="true"
+              :autoHighlight="true"
+              :title="$t('settings.ldap_domain')"
+              :label="$t('settings.choose_ldap_domain')"
+              :options="ldap_domain_list"
+              :userInputLabel="core.$t('settings.choose_ldap_domain')"
+              :acceptUserInput="false"
+              :showItemType="true"
+              :invalid-message="$t(error.ldap_domain)"
+              :disabled="loading.getConfiguration || loading.configureModule"
+              tooltipAlignment="start"
+              tooltipDirection="top"
+              ref="ldap_domain"
+            >
+              <template slot="tooltip">
+                {{
+                  $t("settings.choose_the_ldap_domain_to_authenticate_users")
+                }}
+              </template>
+            </NsComboBox>
             <cv-toggle
               value="letsEncrypt"
               :label="$t('settings.lets_encrypt')"
@@ -158,6 +182,8 @@ export default {
       email: "",
       userFullName: "",
       host: "",
+      ldap_domain: "",
+      ldap_domain_list: [],
       isLetsEncryptEnabled: false,
       isHttpToHttpsEnabled: false,
       loading: {
@@ -175,6 +201,7 @@ export default {
         host: "",
         lets_encrypt: "",
         http2https: "",
+        ldap_domain: "",
       },
     };
   },
@@ -247,6 +274,16 @@ export default {
       this.host = config.host;
       this.isLetsEncryptEnabled = config.lets_encrypt;
       this.isHttpToHttpsEnabled = config.http2https;
+      // force to reload mail_server value after dom update
+      this.$nextTick(() => {
+        this.ldap_domain = config.ldap_domain;
+      });
+      this.ldap_domain_list = config.ldap_domain_list;
+      this.ldap_domain_list.unshift({
+        name: "no_user_domain",
+        label: this.$t("settings.internal_authentication"),
+        value: "",
+      });
       this.loading.getConfiguration = false;
       this.focusElement("wikiName");
     },
@@ -377,6 +414,7 @@ export default {
             host: this.host,
             lets_encrypt: this.isLetsEncryptEnabled,
             http2https: this.isHttpToHttpsEnabled,
+            ldap_domain: this.ldap_domain,
           },
           extra: {
             title: this.$t("settings.instance_configuration", {
