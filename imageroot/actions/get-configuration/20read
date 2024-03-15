@@ -28,6 +28,7 @@ import os
 import sys
 import json
 import agent
+from agent.ldapproxy import Ldapproxy
 
 # Prepare return variable
 config = {}
@@ -43,6 +44,17 @@ config["user_full_name"] = rdb.hget(env, "DOKUWIKI_FULL_NAME");
 config["host"] =  rdb.hget(env, "TRAEFIK_HOST");
 config["http2https"] =  rdb.hget(env, "TRAEFIK_HTTP2HTTPS") == "True";
 config["lets_encrypt"] =  rdb.hget(env, "TRAEFIK_LETS_ENCRYPT") == "True";
+# retrieve LDAP domains list
+lp = Ldapproxy()
+domains = []
+for key in lp.get_domains_list():
+    domains.append({
+        "name": key,
+        "label": key,
+        "value": key,
+    })
 
+config['ldap_domain_list'] = domains
+config['ldap_domain'] = os.environ.get("LDAP_DOMAIN",'')
 # Dump the configuratio to stdou
 json.dump(config, fp=sys.stdout)
