@@ -16,7 +16,9 @@
         "email_format": "Indirizzo e-mail non valido",
         "lets_encrypt": "Let's Encrypt",
         "admin_full_name": "Nome completo dell'amministratore",
-        "wiki_name": "Nome Wiki"
+        "wiki_name": "Nome Wiki",
+        "host_pattern": "Deve essere un nome di dominio pienamente qualificato valido",
+        "host_format": "Deve essere un nome di dominio pienamente qualificato valido"
     },
     "status": {
         "no_images": "Nessuna immagine",

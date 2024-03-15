@@ -15,6 +15,18 @@
         />
       </div>
     </div>
+    <div v-if="already_set" class="bx--row">
+      <div class="bx--col">
+        <NsInlineNotification
+          kind="info"
+          :title="$t('settings.dokuwiki_note')"
+          :description="$t('settings.must_be_configured_inside_dokuwiki')"
+          :showCloseButton="false"
+          @click="goToDokuwikiWebapp"
+          :actionLabel="$t('settings.go_to_dokuwiki')"
+        />
+      </div>
+    </div>
     <div class="bx--row">
       <div class="bx--col-lg-16">
         <cv-tile :light="true">
@@ -24,7 +36,7 @@
               v-model.trim="wikiName"
               class="mg-bottom"
               :invalid-message="$t(error.wiki_name)"
-              :disabled="loading.getConfiguration || loading.configureModule"
+              :disabled="loading.getConfiguration || loading.configureModule || already_set"
               ref="wikiName"
             >
             </cv-text-input>
@@ -34,7 +46,7 @@
                 v-model.trim="username"
                 class="mg-bottom"
                 :invalid-message="$t(error.username)"
-                :disabled="loading.getConfiguration || loading.configureModule"
+                :disabled="loading.getConfiguration || loading.configureModule  || already_set"
                 ref="username"
               >
               </cv-text-input>
@@ -46,7 +58,7 @@
                 :password-hide-label="$t('settings.hide_password')"
                 class="mg-bottom"
                 :invalid-message="$t(error.password)"
-                :disabled="loading.getConfiguration || loading.configureModule"
+                :disabled="loading.getConfiguration || loading.configureModule  || already_set"
                 ref="password"
               >
               </cv-text-input>
@@ -56,7 +68,7 @@
                 v-model.trim="email"
                 class="mg-bottom"
                 :invalid-message="$t(error.email)"
-                :disabled="loading.getConfiguration || loading.configureModule"
+                :disabled="loading.getConfiguration || loading.configureModule  || already_set"
                 ref="email"
               >
               </cv-text-input>
@@ -65,7 +77,7 @@
                 v-model.trim="userFullName"
                 class="mg-bottom"
                 :invalid-message="$t(error.user_full_name)"
-                :disabled="loading.getConfiguration || loading.configureModule"
+                :disabled="loading.getConfiguration || loading.configureModule  || already_set"
                 ref="userFullName"
               >
               </cv-text-input>
@@ -176,6 +188,7 @@ export default {
         page: "settings",
       },
       urlCheckInterval: null,
+      already_set: false,
       wikiName: "",
       username: "",
       password: "",
@@ -222,6 +235,9 @@ export default {
     next();
   },
   methods: {
+    goToDokuwikiWebapp() {
+      window.open(`https://${this.host}`, "_blank");
+    },
     async getConfiguration() {
       this.loading.getConfiguration = true;
       this.error.getConfiguration = "";
@@ -274,7 +290,7 @@ export default {
       this.host = config.host;
       this.isLetsEncryptEnabled = config.lets_encrypt;
       this.isHttpToHttpsEnabled = config.http2https;
-      // force to reload mail_server value after dom update
+      // force to reload value after dom update
       this.$nextTick(() => {
         this.ldap_domain = config.ldap_domain;
       });
@@ -285,6 +301,13 @@ export default {
         value: "",
       });
       this.loading.getConfiguration = false;
+      // set already_set to true if the configuration is not empty
+      if (
+        this.wikiName
+      ) {
+        this.already_set = true;
+      }
+
       this.focusElement("wikiName");
     },
     validateConfigureModule() {
