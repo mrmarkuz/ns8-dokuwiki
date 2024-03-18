@@ -321,14 +321,8 @@ export default {
       this.$nextTick(() => {
         this.ldap_domain = config.ldap_domain;
         if (!this.ldap_domain) {
-          this.ldap_domain = '-';
+          this.ldap_domain = "-";
         }
-      });
-      this.ldap_domain_list = config.ldap_domain_list;
-      this.ldap_domain_list.unshift({
-        name: "no_user_domain",
-        label: this.$t("settings.internal_authentication"),
-        value: "-",
       });
       this.loading.getConfiguration = false;
       // set already_set to true if the configuration is not empty
@@ -471,7 +465,7 @@ export default {
             host: this.host,
             lets_encrypt: this.isLetsEncryptEnabled,
             http2https: this.isHttpToHttpsEnabled,
-            ldap_domain: this.ldap_domain == '-' ? '' : this.ldap_domain,
+            ldap_domain: this.ldap_domain == "-" ? "" : this.ldap_domain,
           },
           extra: {
             title: this.$t("settings.instance_configuration", {
