@@ -311,12 +311,13 @@ export default {
       this.host = config.host;
       this.isLetsEncryptEnabled = config.lets_encrypt;
       this.isHttpToHttpsEnabled = config.http2https;
-      this.ldap_domain_list = config.ldap_domain_list;
-      this.ldap_domain_list.unshift({
+      let ldap_domain_list_tmp = config.ldap_domain_list;
+      ldap_domain_list_tmp = ldap_domain_list_tmp.unshift({
         name: "no_user_domain",
         label: this.$t("settings.internal_authentication"),
         value: "-",
       });
+      this.ldap_domain_list = ldap_domain_list_tmp;
       // force to reload value after dom update
       this.$nextTick(() => {
         this.ldap_domain = config.ldap_domain;
