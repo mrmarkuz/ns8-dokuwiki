@@ -30,17 +30,21 @@
     <div class="bx--row">
       <div class="bx--col-lg-16">
         <cv-tile :light="true">
-          <cv-form @submit.prevent="configureModule">
+          <cv-skeleton-text
+            v-show="loading.getConfiguration || loading.configureModule"
+            heading
+            paragraph
+            :line-count="15"
+            width="80%"
+          ></cv-skeleton-text>
+          <cv-form v-show="!(loading.getConfiguration || loading.configureModule)" @submit.prevent="configureModule">
             <cv-text-input
+              v-if="!already_set"
               :label="$t('settings.wiki_name')"
               v-model.trim="wikiName"
               class="mg-bottom"
               :invalid-message="$t(error.wiki_name)"
-              :disabled="
-                loading.getConfiguration ||
-                loading.configureModule ||
-                already_set
-              "
+              :disabled="loading.getConfiguration || loading.configureModule"
               ref="wikiName"
             >
             </cv-text-input>
@@ -75,29 +79,23 @@
               >
               </cv-text-input>
               <cv-text-input
+                v-if="!already_set"
                 :label="$t('settings.admin_email')"
                 placeholder="admin@example.com"
                 v-model.trim="email"
                 class="mg-bottom"
                 :invalid-message="$t(error.email)"
-                :disabled="
-                  loading.getConfiguration ||
-                  loading.configureModule ||
-                  already_set
-                "
+                :disabled="loading.getConfiguration || loading.configureModule"
                 ref="email"
               >
               </cv-text-input>
               <cv-text-input
+                v-if="!already_set"
                 :label="$t('settings.admin_full_name')"
                 v-model.trim="userFullName"
                 class="mg-bottom"
                 :invalid-message="$t(error.user_full_name)"
-                :disabled="
-                  loading.getConfiguration ||
-                  loading.configureModule ||
-                  already_set
-                "
+                :disabled="loading.getConfiguration || loading.configureModule"
                 ref="userFullName"
               >
               </cv-text-input>
@@ -311,6 +309,13 @@ export default {
       this.host = config.host;
       this.isLetsEncryptEnabled = config.lets_encrypt;
       this.isHttpToHttpsEnabled = config.http2https;
+      // force to reload value after dom update
+      this.$nextTick(() => {
+        this.ldap_domain = config.ldap_domain;
+        if (this.ldap_domain == "") {
+          this.ldap_domain = "-";
+        }
+      });
       // for NSComboBox we need to create a temporary variable
       let ldap_domain_list_tmp = config.ldap_domain_list;
       ldap_domain_list_tmp.unshift({
@@ -319,15 +324,6 @@ export default {
         value: "-",
       });
       this.ldap_domain_list = ldap_domain_list_tmp;
-
-      // force to reload value after dom update
-      this.$nextTick(() => {
-        this.ldap_domain = config.ldap_domain;
-        if (!this.ldap_domain) {
-          this.ldap_domain = "-";
-        }
-      });
-      this.loading.getConfiguration = false;
       // set already_set to true if the configuration is not empty
       if (
         this.wikiName &&
@@ -338,8 +334,9 @@ export default {
       ) {
         this.already_set = true;
       }
+      this.loading.getConfiguration = false;
 
-      this.focusElement("wikiName");
+      this.focusElement("host");
     },
     validateConfigureModule() {
       this.clearErrors(this);
