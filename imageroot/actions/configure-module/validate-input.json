@@ -23,7 +23,8 @@
     "email",
     "host",
     "http2https",
-    "lets_encrypt"
+    "lets_encrypt",
+    "ldap_domain"
   ],
   "properties": {
     "wiki_name": {
@@ -61,6 +62,10 @@
       "type": "boolean",
       "title": "HTTP to HTTPS redirection",
       "description": "Redirect all the HTTP requests to HTTPS"
+    },
+    "ldap_domain": {
+      "type": "string",
+      "description": "LDAP domain name"
     }
   }
 }
