@@ -120,7 +120,7 @@
               :title="$t('settings.ldap_domain')"
               :label="$t('settings.choose_ldap_domain')"
               :options="ldap_domain_list"
-              :userInputLabel="core.$t('settings.choose_ldap_domain')"
+              :userInputLabel="core.$t('common.user_input_l')"
               :acceptUserInput="false"
               :showItemType="true"
               :invalid-message="$t(error.ldap_domain)"
