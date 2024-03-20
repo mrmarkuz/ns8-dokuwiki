@@ -50,7 +50,7 @@
     "email_format": "Invalid email address",
     "ldap_domain": "LDAP domain",
     "host_format": "Must be a valid fully qualified domain name",
-    "choose_the_ldap_domain_to_authenticate_users": "Choose the LDAP domain to authenticate users (empty to disable)",
+    "choose_the_ldap_domain_to_authenticate_users": "Choose the LDAP domain to authenticate users, or leave empty to disable LDAP authentication",
     "choose_ldap_domain": "Choose LDAP domain",
     "internal_authentication": "Internal authentication"
   },
