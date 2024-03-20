@@ -41,6 +41,12 @@ password = data.get("password","admin")
 email = data.get("email", "admin@example.org")
 full_name = data.get("user_full_name","Administrator")
 ldap_domain = data.get("ldap_domain", "")
+# bind user to the domain
+if ldap_domain:
+    agent.bind_user_domains([ldap_domain])
+else:
+    agent.bind_user_domains([])
+
 
 # Talk with agent using file descriptor.
 # Setup configuration from user input.

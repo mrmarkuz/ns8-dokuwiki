@@ -10,15 +10,10 @@
 #
 
 import os
-import sys
-import json
 import agent
 from agent.ldapproxy import Ldapproxy
 
 udomname = os.environ.get('LDAP_DOMAIN','')
-
-if udomname:
-    agent.bind_user_domains([udomname])
 
 try:
     odom = Ldapproxy().get_domain(udomname)
